@@ -1,4 +1,4 @@
-# 📌 Human Activity Recognition (HAR) Project
+# 📌 Human Activity Recognition (HAR) with Pytorch Lightning Project
 
 ## 🔍 Introduction
 This project focuses on recognizing human activities from images using deep learning. The model is based on **ResNet-50** with transfer learning to classify different human activities. Additionally, **YOLOv8** is used for object detection to improve accuracy by incorporating relevant context objects.
