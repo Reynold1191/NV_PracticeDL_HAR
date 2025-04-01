@@ -11,7 +11,7 @@ har_model = HARResNet50(len(class_names))
 har_model.load_state_dict(torch.load("checkpoints/har_resnet50.pth", map_location=torch.device('cpu')))
 har_model.eval()
 
-# Transform cho ảnh đầu vào HAR
+# Transform input 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
@@ -45,7 +45,7 @@ def find_best_text_position(x1, y1, x2, y2, used_positions, img_w, img_h, font, 
             text_bbox = (tx, ty, tx + text_width, ty + text_height)
             overlap = False
             for pos in used_positions:
-                # Kiểm tra xem text mới có chồng lên text cũ không
+                # Check overlap
                 if (pos[0] < text_bbox[2] and pos[2] > text_bbox[0] and
                     pos[1] < text_bbox[3] and pos[3] > text_bbox[1]):
                     overlap = True
@@ -117,7 +117,7 @@ def process_image(image_path):
 def main():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("image", type=str, help="Tên file ảnh hoặc 'all' để chạy trên toàn bộ thư mục test/")
+    parser.add_argument("image", type=str, help="File name or 'all' for running all the test set")
     args = parser.parse_args()
 
     test_dir = "test/"
@@ -131,7 +131,7 @@ def main():
         if os.path.exists(image_path):
             process_image(image_path)
         else:
-            print("File không tồn tại!")
+            print("File not found!")
 
 if __name__ == "__main__":
     main()
