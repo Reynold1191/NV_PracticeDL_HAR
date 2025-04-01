@@ -73,17 +73,18 @@ Here is an example of the output image:
 ![Out2](Output/output_multi1.jpg)
 ![Out3](Output1/output_walking_dog1.jpg)
 ![Out1](Output2/output_walking_dog1.jpg)
-![Out1](Output2/output_multi1.jpg)
 
 ## 🔬 Observations
 - **Context Matters:** Expanding bounding boxes to include objects (e.g., a dog in "walking the dog") improves classification accuracy.
 - **Bounding Box Refinement:** Large bounding boxes capture more context but may introduce noise.
 - **Optimal Label Placement:** Dynamic text positioning prevents label overlap for better readability.
+- **Limitations:** Unable to working with multi-activities in one picture with the combination of YOLOv8 and Resnet50.
 
 ## 🔮 Future Improvements
 - Implement a **temporal model** for video-based activity recognition.
 - Fine-tune with a **larger dataset** for improved generalization.
 - Experiment with **self-supervised learning** for feature extraction.
+- New approach to work with multi-activities in one picture.
 
 ---
 📌 **Developed as part of a deep learning project for human activity recognition.**
