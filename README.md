@@ -76,7 +76,7 @@ Here is an example of the output image:
 
 ## 🔬 Observations
 - **Context Matters:** Expanding bounding boxes to include objects (e.g., a dog in "walking the dog") improves classification accuracy.
-- **Bounding Box Refinement:** Large bounding boxes capture more context but may introduce noise.
+- **Bounding Box Refinement:** Large bounding boxes capture more context but may introduce noise. However, only increase the fixed proportion of bounding boxes may not capture all the context.
 - **Optimal Label Placement:** Dynamic text positioning prevents label overlap for better readability.
 - **Limitations:** Unable to working with multi-activities in one picture with the combination of YOLOv8 and Resnet50.
 
