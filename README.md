@@ -66,6 +66,15 @@ or
 python HAR_yolotest3.py all
 ```
 
+## 🖼️ Output Example
+Here is an example of the output image:
+
+![Out1](Output/output_climbing1.jpg)
+![Out2](Output/output_multi1.jpg)
+![Out3](Output1/output_walking_dog1.jpg)
+![Out1](Output2/output_walking_dog1.jpg)
+![Out1](Output2/output_multi1.jpg)
+
 ## 🔬 Observations
 - **Context Matters:** Expanding bounding boxes to include objects (e.g., a dog in "walking the dog") improves classification accuracy.
 - **Bounding Box Refinement:** Large bounding boxes capture more context but may introduce noise.
