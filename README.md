@@ -41,6 +41,10 @@ This project focuses on recognizing human activities from images using deep lear
 ```bash
 pip install lightning ultralytics
 ```
+### Training Resnet50
+```bash
+python HAR_main.py
+```
 ### Run on a Single Image (only Resnet50)
 ```bash
 python HAR_test.py climbing1
