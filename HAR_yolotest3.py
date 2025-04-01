@@ -20,9 +20,9 @@ transform = transforms.Compose([
 
 def expand_bbox(person_box, object_boxes, threshold=10):
     """ 
-    Mở rộng bounding box người nếu có object khác gần đó.
-    - person_box: Bounding box gốc của người.
-    - object_boxes: Danh sách bounding box của object khác.
+    Expand BBox of people if there is a object nearby
+    - person_box: Original bounding box of human
+    - object_boxes: List bounding box of other objects
     """
     px1, py1, px2, py2 = person_box
     expanded = False
@@ -39,7 +39,7 @@ def expand_bbox(person_box, object_boxes, threshold=10):
 
     return (px1, py1, px2, py2) if expanded else person_box  # Only expend if has object nearby
 def predict_action(person_crop):
-    """ Dự đoán hành động từ ảnh đã được crop. """
+    """ Predict activity form cropped image """
     image = transform(person_crop).unsqueeze(0)
     with torch.no_grad():
         output = har_model(image)
@@ -47,7 +47,7 @@ def predict_action(person_crop):
     return class_names[predicted_class]
 
 def process_image(image_path):
-    """ Phát hiện người, mở rộng box nếu có object và dự đoán hành động. """
+    """ Detect human, expand bbox (if there is an object nearby) and make prediction """
     image = Image.open(image_path).convert("RGB")
     results = object_detector(image)
     os.makedirs("Output1", exist_ok=True)
@@ -124,7 +124,7 @@ def process_image(image_path):
 def main():
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("image", type=str, help="Tên file ảnh hoặc 'all' để chạy trên toàn bộ thư mục test/")
+    parser.add_argument("image", type=str, help="File name of 'all' for running all the test set")
     args = parser.parse_args()
 
     test_dir = "test/"
@@ -138,7 +138,7 @@ def main():
         if os.path.exists(image_path):
             process_image(image_path)
         else:
-            print("File không tồn tại!")
+            print("File not found!")
 
 if __name__ == "__main__":
     main()
