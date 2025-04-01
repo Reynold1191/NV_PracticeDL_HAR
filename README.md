@@ -39,15 +39,15 @@ This project focuses on recognizing human activities from images using deep lear
 ## 🚀 How to Run
 ### Install Dependencies
 ```bash
-pip install -r requirements.txt
+pip install lightning ultralytics
 ```
 ### Run on a Single Image
 ```bash
-python har_test.py test/image_name.jpg
+python HAR_test.py climbing1
 ```
 ### Run on All Test Images
 ```bash
-python har_test.py all
+python HAR_test.py all
 ```
 
 ## 🔬 Observations
