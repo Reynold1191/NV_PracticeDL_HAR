@@ -4,7 +4,7 @@
 This project focuses on recognizing human activities from images using deep learning. The model is based on **ResNet-50** with transfer learning to classify different human activities. Additionally, **YOLOv8** is used for object detection to improve accuracy by incorporating relevant context objects.
 
 ## 📂 Dataset
-- **Structure:** The dataset is organized as `train/activity_name/xxx.jpg`.
+- **Structure:** The dataset is Stanford40 and organized as `train/activity_name/xxx.jpg`.
 - **Preprocessing:**
   - Images are resized to 224x224 before being fed into the ResNet model.
   - Normalization is applied using ImageNet mean and standard deviation.
