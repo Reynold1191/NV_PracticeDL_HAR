@@ -48,7 +48,8 @@ def main():
             img_path = os.path.join(args.test_dir, img_name)
             if img_path.endswith(".jpg") or img_path.endswith(".png"):
                 action = predict_image(model, img_path, class_names)
-                print(f"{img_name} --> Predicted activity: {action}")
+                print("{:<30} {:<30} {:<30}".format(img_name, '--> Predicted activity: ', action))
+                # print(f"{img_name} --> Predicted activity: {action}")
     else:
         # Predict a specific pic
         img_path = os.path.join(args.test_dir, args.filename + ".jpg")
@@ -56,7 +57,8 @@ def main():
             print(f"Error: file not found {img_path}")
             return
         action = predict_image(model, img_path, class_names)
-        print(f"{args.filename}.jpg --> Predicted activity: {action}")
+        print("{:<30} {:<30} {:<30}".format(f"{args.filename}.jpg", '--> Predicted activity: ', action))
+        # print(f"{args.filename}.jpg --> Predicted activity: {action}")
 
 if __name__ == "__main__":
     main()
