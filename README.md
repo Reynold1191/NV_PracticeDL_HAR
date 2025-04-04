@@ -36,6 +36,14 @@ This project focuses on recognizing human activities from images using deep lear
 | Test Accuracy | 96% |
 | Test Loss | 0.13 |
 
+### Train 
+![res_train](res_train.png)
+
+
+### Test 
+![res_test](res.png)
+
+
 ## 🚀 How to Run
 ### Install Dependencies
 ```bash
